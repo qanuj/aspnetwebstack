@@ -194,7 +194,7 @@ namespace WebMatrix.WebData
                             }
 
                             // REVIEW: is there a way to batch up these inserts?
-                            int rows = db.Execute("INSERT INTO " + UsersInRoleTableName + " VALUES (" + userIds[uId] + "," + roleIds[rId] + "); ");
+                            int rows = db.Execute("INSERT INTO " + UsersInRoleTableName + " (UserrId,RoleId) VALUES (" + userIds[uId] + "," + roleIds[rId] + "); ");
                             if (rows != 1)
                             {
                                 throw new ProviderException(WebDataResources.Security_DbFailure);
